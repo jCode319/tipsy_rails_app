@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   root 'sessions#home'
 
-  get '/signup' => 'sessions#new'
-  post '/signup' => 'sessions#create'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+
 
   resources :favs
   resources :reviews

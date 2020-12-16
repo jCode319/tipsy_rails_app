@@ -1,7 +1,7 @@
 <h2>Create An Account</h2>
 <br>
 <br>
-<%= form_with model: @user, url:'/signup', local: true do |f| %>
+<%= form_with model: @user, local: true do |f| %>
   <%= f.label "username:" %>
   <%= f.text_field :username %>
   <br>
@@ -11,7 +11,7 @@
   <br>
   <br>
   <%= f.label "password:" %>
-  <%= f.text_field :password_digest %>
+  <%= f.password_field :password %>
   <br>
   <br>
   <%= f.label "city:" %>

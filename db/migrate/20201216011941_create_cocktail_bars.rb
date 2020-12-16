@@ -4,7 +4,7 @@ class CreateCocktailBars < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :address
       t.float :rating
-      t.belongs_to :search, null: false, foreign_key: true
+      # t.belongs_to :search, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :favs
-  resources :searches
   resources :reviews
   resources :cocktail_bars
   root 'pages#home'

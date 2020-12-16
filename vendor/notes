@@ -1,0 +1,5 @@
+
+Validations:
+- For forms, make state a drop down
+- validation for size 2
+- for city - validate size (min / max)

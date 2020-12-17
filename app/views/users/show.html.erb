@@ -1,7 +1,6 @@
-<h1>My Profile</h1>
+<h1>Welcome <%= @user.username %> </h1>
 <br>
-Name: <%= @user.username %>
-<br>
+<h2> Your info: </h2>
 Email: <%= @user.email %>
 <br>
 City: <%= @user.city %>
@@ -9,5 +8,7 @@ City: <%= @user.city %>
 State: <%= @user.state %>
 <br>
 My Favorite Cocktail: <%= @user.favorite_cocktail %>
+<br>
+<%= link_to "Logout", logout_path, method: "delete" %>
 
 <%# add avatar or profile picture - wish list %>

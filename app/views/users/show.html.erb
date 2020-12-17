@@ -1,6 +1,13 @@
 
 <h2> Welcome <%= @user.username %> </h2>
 <br>
+
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+
 Email: <%= @user.email %>
 <br>
 City: <%= @user.city %>

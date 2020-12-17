@@ -14,7 +14,6 @@ private
   def redirect_if_not_logged_in
     flash[:message] = "Please log in"
     redirect_to '/' if !logged_in?
-
   end
 
 end

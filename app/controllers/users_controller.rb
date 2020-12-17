@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     @user.update(user_params)
+    flash[:message] = "Your account has been updated"
     redirect_to @user
   end
 

@@ -1,0 +1,30 @@
+<h2>Edit Your Account</h2>
+<br>
+<br>
+<%= form_with model: @user, local: true do |f| %>
+  <%= f.label "username:" %>
+  <%= f.text_field :username %>
+  <br>
+  <br>
+  <%= f.label "email:" %>
+  <%= f.email_field :email %>
+  <br>
+  <br>
+  <%= f.label "password:" %>
+  <%= f.password_field :password %>
+  <br>
+  <br>
+  <%= f.label "city:" %>
+  <%= f.text_field :city %><br>
+  <br>
+  <%= f.label "state:" %>
+  <%= f.text_field :state %>
+  <br>
+  <br>
+  <%= f.label "favorite_cocktail:" %>
+  <%= f.text_field :favorite_cocktail %>
+
+  <%= f.submit "Edit Your Account" %>
+
+<% end %>
+<%# add required after validations %>

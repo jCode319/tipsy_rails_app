@@ -1,0 +1,28 @@
+<h1> LOGIN PAGE </h1>
+<br>
+Please enter your info below to login!
+
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
+
+    <br>
+
+  <%= form_for :user do |f| %>
+
+  <%= f.label "email:" %>
+  <%= f.email_field :email %>
+  <br>
+    <br>
+  <%= f.label "password:" %>
+  <%= f.password_field :password %>
+  <br>
+    <br>
+  <%= f.submit "Login" %>
+
+  <% end %>
+
+
+  <%# add required after validations %>

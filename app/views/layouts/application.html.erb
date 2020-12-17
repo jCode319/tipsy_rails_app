@@ -8,10 +8,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%= render 'layouts/navbar' %>
+  <!-- <%= render 'layouts/navbar' %> -->
 
   <body
-
+    <div>
+      <% if logged_in? %>
+      <%= link_to "Update Account", edit_user_path %> |
+      <%= link_to "Logout", logout_path, method: "delete" %>
+      <% else %>
+      <%= link_to "Login-In", login_path %> |
+      <%= link_to "Sign-Up", signup_path %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -1,5 +1,7 @@
 <h1>Welcome to Tipsy!</h1>
 <br>
-<%= link_to "Create An Account", signup_path %>
-<br>
-<%= link_to "Login into your Account", login_path %>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>

@@ -12,10 +12,26 @@ Rails.application.routes.draw do
   #omniauth callback
   get '/auth/google_oauth2/callback', to: 'sessions#google_auth'
 
+    resources :users  do
+      resource :reviews, only: [:new, :create, :index]
+    end
+
+    resources :users  do
+      resource :favs, only: [:new, :create, :index]
+    end
+
+    resources :cocktail_bars  do
+      resource :reviews, only: [:new, :create, :index]
+    end
+
+    # '/reviews/:id/reviews'
+    # '/reviews/:id/favs'
+    # '/cocktail_bars/:id/reviews'
+    # '/cocktail_bars/:id/favs'
+
+
   resources :favs
   resources :reviews
-  resources :cocktail_bars
-  resources :users
   resources :sessions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

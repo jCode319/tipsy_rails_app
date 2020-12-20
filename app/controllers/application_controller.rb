@@ -16,5 +16,12 @@ private
     redirect_to '/' if !logged_in?
   end
 
+  # def redirect_to_proper_path
+  #     if cookies[:last_visited]
+  #       redirect_to cocktail_bars_path(cookies[:last_visited])
+  #     else
+  #       redirect_to current_user
+  #     end
+  # end
 
 end

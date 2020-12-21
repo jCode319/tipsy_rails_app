@@ -14,7 +14,8 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_params)
     @review[:cocktail_bar_id] = @cocktail_bar[:id]
     if @review.save
-      redirect_to @review
+      redirect_to @review #maybe route to cocktail_bar instead. After finishing CB
+
     else
       render :new
     end
@@ -25,6 +26,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find(params[:id])
   end
 
   def update

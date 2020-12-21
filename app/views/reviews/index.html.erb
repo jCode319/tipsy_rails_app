@@ -2,6 +2,6 @@
 
 <li>
 <% @reviews.each do |r| %>
-  <li><%= r.title %></li>
+  <li><%= link_to r.title.capitalize, review_path(r) %></li>
 <% end %>
 </li>

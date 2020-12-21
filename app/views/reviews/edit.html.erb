@@ -1,1 +1,15 @@
-<h1>edit review path</h1>
+<h1>Edit This Review</h1>
+
+<%= form_with model: @review, local: true do |f| %>
+  <%= f.label "title:" %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label "comment:" %>
+  <%= f.text_field :comment %>
+  <br>
+  <%= f.label "rating:" %>
+  <%= f.number_field :rating, step: 0.5 %>
+  <br>
+  <%= f.submit "Edit" %>
+
+<% end %>

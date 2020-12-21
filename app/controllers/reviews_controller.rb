@@ -30,6 +30,13 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+    if @review.save
+      redirect_to @review
+    else
+      render :edit
+    end
   end
 
   def destroy

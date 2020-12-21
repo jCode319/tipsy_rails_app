@@ -10,11 +10,18 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    byebug
-    @review = Review.new(review_params)
+    @cocktail_bar = CocktailBar.first
+    @review = current_user.reviews.build(review_params)
+    @review[:cocktail_bar_id] = @cocktail_bar[:id]
+    if @review.save
+      redirect_to @review
+    else
+      render :new
+    end
   end
 
   def show
+    @review = Review.find(params[:id])
   end
 
   def edit

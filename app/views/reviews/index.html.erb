@@ -1,1 +1,8 @@
-<h1>index review page</h1>
+<h1>All Reviews</h1>
+
+<li>
+<% @reviews.each do |r| %>
+  <li><%= r.title %></li>
+  <li>link_to  , r </li>
+<% end %>
+</li>

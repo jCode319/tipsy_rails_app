@@ -21,4 +21,4 @@ rb_review = Review.create(content: "Bad service", rating: 1, user_id: 1, cocktai
 bl_review = Review.create(content: "Had a blast", rating: 5, user_id: 2, cocktail_bar_id: 2)
 
 don_fav = Fav.create(user_id: 1, cocktail_bar_id: 2)
-lisa_fav = Fav.create(user_id: 2, cocktail_bar_id: 1) 
+lisa_fav = Fav.create(user_id: 2, cocktail_bar_id: 1)

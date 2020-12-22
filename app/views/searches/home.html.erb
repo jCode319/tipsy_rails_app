@@ -1,0 +1,11 @@
+<h1>Welcome to Tipsy!</h1>
+<br>
+
+
+
+<%= form_tag(searches_path, method: :post) do %>
+<%= label_tag(:search, "Enter a City to view cocktail bars:") %>
+<br>
+<%= text_field_tag(:query, nil, class: 'search-text', placeholder: 'Chicago, IL') %>
+<%= submit_tag "Find Cocktail Bar", class: 'btn btn-primary'%>
+<% end %>

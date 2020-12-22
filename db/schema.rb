@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_203340) do
+ActiveRecord::Schema.define(version: 2020_12_22_144916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_12_21_203340) do
     t.string "yelp_url"
     t.string "image_url"
     t.integer "yelp_id"
+    t.integer "search_id"
+    t.index ["search_id"], name: "index_cocktail_bars_on_search_id"
   end
 
   create_table "favs", force: :cascade do |t|

@@ -1,12 +1,9 @@
 <h2>Search Show Page</h2>
 
 <ol>
-<% @search.cocktail_bars.each do |cb| %>
+<% @search.cocktail_bars.each do |cocktail_bar| %>
 
-  <li><%= cb.name %> | <%= cb.address %> | <%= cb.phone_number %> | <%= cb.rating %>  </li>
-
-  <!-- <li><%= cb.image_url %></li>
-  <li><%= cb.yelp_url %></li> -->
+  <%= render partial: 'cocktail_bars/cocktail_bar', locals: {cocktail_bar: cocktail_bar} %>
 
 <% end %>
 </ol>

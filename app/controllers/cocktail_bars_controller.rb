@@ -1,9 +1,8 @@
 class CocktailBarsController < ApplicationController
 
-
-  def index
-    # byebug
-  end
+def show
+  @cocktail_bar = CocktailBar.find(params[:id])
+end
 
 
 end

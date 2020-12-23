@@ -1,7 +1,27 @@
-<h2>Show Page for selected cocktail_bar</h2>
+<h2> <%= @cocktail_bar.name %> </h2>
 
 
-<%= cocktail_bar.rating %>  </li>
+<p>
+Phone Number: <%= @cocktail_bar.phone_number %>
+<br>
+Address: <%= @cocktail_bar.address %>
+<br>
+Rating: <%= @cocktail_bar.rating %>
+<br>
 
-<!-- <li><%= cocktail_bar.image_url %></li>
-<li><%= cocktail_bar.yelp_url %></li> -->
+<!-- if signed in -->
+
+<%= link_to "Leave a review" %>
+<br>
+
+<%= link_to "Make this a favorite" %>
+<br>
+
+</p>
+
+<img src=<%= @cocktail_bar.image_url %> alt="Yelp Picture" class="img-thumbnail" size=>
+
+
+<!-- <li> cocktail_bar.yelp_url %></li> -->
+
+<!-- css - do a creative box with info and logo and pics  -->

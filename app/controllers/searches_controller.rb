@@ -1,11 +1,5 @@
 class SearchesController < ApplicationController
 
-  # def new
-  #   byebug
-  #    @search = Search.new
-  #    redirect_to @search
-  #  end
-
   def create
     @search = Search.create(query: params[:query], user: current_user)
     if CocktailBar.yelp_search_result(params[:query], @search) == "error"

@@ -10,12 +10,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @cocktail_bar = CocktailBar.first
+    @cocktail_bar = CocktailBar.find(params[:cocktail_bar_id])
     @review = current_user.reviews.build(review_params)
     @review[:cocktail_bar_id] = @cocktail_bar[:id]
     if @review.save
       redirect_to @review #maybe route to cocktail_bar instead. After finishing CB
-
     else
       render :new
     end

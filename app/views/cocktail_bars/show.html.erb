@@ -1,5 +1,6 @@
 <h2> <%= @cocktail_bar.name %> </h2>
 
+<img src=<%= @cocktail_bar.image_url %> alt="Yelp Picture" class="img-thumbnail" width="200" height="300">
 
 <p>
 Phone Number: <%= @cocktail_bar.phone_number %>
@@ -10,8 +11,11 @@ Rating: <%= @cocktail_bar.rating %>
 <br>
 
 <!-- if signed in -->
+<br>
+<h3>Reviews</h3>
 
-<%= link_to "Leave a review" %>
+<%= render partial: 'reviews/new', locals: {cocktail_bar: @cocktail_bar} %>
+
 <br>
 
 <%= link_to "Make this a favorite" %>
@@ -19,7 +23,6 @@ Rating: <%= @cocktail_bar.rating %>
 
 </p>
 
-<img src=<%= @cocktail_bar.image_url %> alt="Yelp Picture" class="img-thumbnail" size=>
 
 
 <!-- <li> cocktail_bar.yelp_url %></li> -->

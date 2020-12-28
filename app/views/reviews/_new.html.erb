@@ -1,7 +1,7 @@
-<h1>Make A New Review</h1>
+<p>Make a new review below:</p>
 
 
-<%= form_with model: @review, local: true do |f| %>
+<%= form_with(model:[@cocktail_bar, Review.new]) do |f| %>
   <%= f.label "title:" %>
   <%= f.text_field :title %>
   <br>

@@ -14,7 +14,8 @@ Rating: <%= @cocktail_bar.rating %>
 <br>
 <h3>Reviews</h3>
 
-<%= render partial: 'reviews/new', locals: {cocktail_bar: @cocktail_bar} %>
+<%= link_to "Make A Review", new_cocktail_bar_reviews_path(@cocktail_bar) %>
+
 
 <br>
 

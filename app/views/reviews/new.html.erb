@@ -1,6 +1,6 @@
 
 <% if logged_in? %>
-  <h2>Make a new review for <%= @cocktail_bar.name %> below:</h2>
+  <h2>Make a new review for <%= @cocktail_bar.name %>:</h2>
 
 <%= form_with(model:[@cocktail_bar, @review]) do |f| %>
   <%= f.label "title:" %>

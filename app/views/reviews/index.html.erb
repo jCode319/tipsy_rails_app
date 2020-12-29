@@ -1,7 +1,9 @@
-<h1>All Reviews</h1>
+<h1>My Reviews</h1>
 
-<li>
+<ol>
 <% @reviews.each do |r| %>
-  <li><%= link_to r.title.capitalize, review_path(r) %></li>
+  <% if r.user == current_user %>
+    <li><%= r.cocktail_bar.name %> - <%= link_to r.title.capitalize, review_path(r) %></li>
+  <% end %>
 <% end %>
-</li>
+</ol>

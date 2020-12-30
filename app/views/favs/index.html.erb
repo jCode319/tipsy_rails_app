@@ -1,0 +1,9 @@
+<h1>My Favs</h1>
+
+<ol>
+<% @favs.each do |f| %>
+  <% if f.user == current_user %>
+    <li><%= f.cocktail_bar.name %> - <%= f.cocktail_bar.address %> -- <%= link_to "remove from favorites", fav_path(f), method: "delete" %></li>
+  <% end %>
+<% end %>
+</ol>

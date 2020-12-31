@@ -27,9 +27,9 @@ class FavsController < ApplicationController
   end
 
   def destroy
-    @fav = Fav.find_by(id: params[:id])
+    @fav = Fav.find_by(params[:cocktail_id])
     @fav.destroy
-    redirect_to current_user
+    redirect_to favs_path
   end
 
   private

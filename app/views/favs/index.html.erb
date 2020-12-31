@@ -3,7 +3,7 @@
 <ol>
 <% @favs.each do |f| %>
   <% if f.user == current_user %>
-    <li><%= f.cocktail_bar.name %> - <%= f.cocktail_bar.address %> -- <%= link_to "remove from favorites", fav_path(f), method: "delete" %></li>
+    <li><%= link_to f.cocktail_bar.name, cocktail_bar_path(f.cocktail_bar) %> - <%= f.cocktail_bar.address %></li>
   <% end %>
 <% end %>
 </ol>

@@ -9,20 +9,21 @@ Address: <%= @cocktail_bar.address %>
 <br>
 Rating: <%= @cocktail_bar.rating %>
 <br>
+<%= link_to "Visit Yelp Page", @cocktail_bar.yelp_url %>
+<br>
 
 <!-- if signed in -->
+
+<% if logged_in? %>
+  <%= link_to "Leave A Review", new_cocktail_bar_reviews_path(@cocktail_bar) %>
 <br>
-<h3>Reviews</h3>
-
-<%= link_to "Make A Review", new_cocktail_bar_reviews_path(@cocktail_bar) %>
-
-
+  <% if @cocktail_bar.favs.empty? %>
+  <%= render partial: "favs/new", locals: {user: current_user, cocktail_bar: @cocktail_bar } %>
 <br>
-
-<%= link_to "Make this a favorite" %>
-<br>
-
-</p>
+  <% elsif !@cocktail_bar.favs.empty? %>
+  <%= render partial: "favs/edit", locals: {user: current_user, cocktail_bar: @cocktail_bar } %>
+  <% end %>
+<% end %>
 
 
 

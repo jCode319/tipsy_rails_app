@@ -14,22 +14,16 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#google_auth'
 
     resources :users  do
-      resource :reviews, only: [:new, :create, :index]
+      resource :reviews, only: [:new, :create, :index, :show]
     end
 
-    resources :users  do
-      resource :favs, only: [:new, :create, :index]
+    resources :cocktail_bars  do
+      resource :favs
     end
 
     resources :cocktail_bars  do
       resource :reviews, only: [:new, :create, :index]
     end
-
-    # '/reviews/:id/reviews'
-    # '/reviews/:id/favs'
-    # '/cocktail_bars/:id/reviews'
-    # '/cocktail_bars/:id/favs'
-
 
   resources :favs
   resources :reviews

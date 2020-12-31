@@ -32,15 +32,15 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    if params[:cocktail_bar_id] && @cocktail_bar = CocktailBar.find_by_id(params[:cocktail_bar_id])
-      @review = @cocktail_bar.reviews
-    else
+    if params[:id]
       @review = Review.find(params[:id])
+    else
+      @review = Review.find_by(user_id: params[:user_id])
     end
   end
 
   def edit
-    @review = Review.find(params[:id])
+    @review = Review.find_by(user_id: params[:id])
   end
 
   def update
